@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,27 +35,37 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
         }
-        login.setOnClickListener(new View.OnClickListener() {
-            String valiedemail=email.getText().toString().trim();
-            String passvalid=password.getText().toString().trim();
+        signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (valiedemail.isEmpty()){
-                    email.setError("Please enter your Email");
-                }else if(passvalid.isEmpty()){
-                    password.setError("Please enter Your Password");
-                }else if(passvalid.length()<8){
-                    password.setError("Password to Short");
+                startActivity(new Intent(getApplicationContext(),SignUpActivity.class));
+                finish();
+            }
+        });
+        login.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String valiedemail=email.getText().toString().trim();
+                String passvalid=password.getText().toString().trim();
+                if (TextUtils.isEmpty(valiedemail)){
+                    email.setError("Please enter your email");
+                }
+                else if (TextUtils.isEmpty(passvalid)){
+                    password.setError("Password is empty please enter your password");
+                }
+                else if (passvalid.length()<8){
+                    password.setError("password is to short ");
                 }else {
-                    auth.signInWithEmailAndPassword(valiedemail,passvalid).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    auth.signInWithEmailAndPassword(valiedemail, passvalid).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                             if (!task.isSuccessful()){
-                                 Toast.makeText(LoginActivity.this, "Error"+task.getException(), Toast.LENGTH_SHORT).show();
-                               }else{
-                                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                                 finish();
-                             }
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "Error" + task.getException(), Toast.LENGTH_SHORT).show();
+                            } else {
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                finish();
+                            }
                         }
                     });
                 }
