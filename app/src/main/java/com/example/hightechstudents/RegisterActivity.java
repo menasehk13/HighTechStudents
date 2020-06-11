@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -30,6 +31,10 @@ public class RegisterActivity extends AppCompatActivity{
     FirebaseAuth proFirebaseAuth;
     FirebaseFirestore proFirestore;
     String userId;
+    String deprt[]={"Select Department","Computer Engineering","Computer Science","Accounting","TVTE"};
+    String secs[]={"Select Section","1","2","3"};
+    String gen[]={"Gender","Male","Female"};
+    ArrayAdapter genderadapter,sectionadapter,departementadapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,11 @@ public class RegisterActivity extends AppCompatActivity{
         genderSpinner = findViewById(R.id.genderspinner);
         depSpinner = findViewById(R.id.departementspinner);
         secSpinner = findViewById(R.id.sectionspinner);
+         genderadapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,gen);
+         genderSpinner.setAdapter(genderadapter);
+         sectionadapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,secs);
+         secSpinner.setAdapter(sectionadapter);
+         departementadapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,deprt);
         proFirebaseAuth = FirebaseAuth.getInstance();
         proFirestore = FirebaseFirestore.getInstance();
         userId = proFirebaseAuth.getCurrentUser().getUid();
@@ -57,6 +67,9 @@ public class RegisterActivity extends AppCompatActivity{
                 String putSureName = sureName.getText().toString();
                 String putStudentId = studentId.getText().toString();
                 String putRegYear = regYear.getText().toString();
+                String putDepartment=depSpinner.getSelectedItem().toString().trim();
+                String putGender=genderSpinner.getSelectedItem().toString().trim();
+                String putSection=secSpinner.getSelectedItem().toString().trim();
                 if(putFirstName.isEmpty())
                 {
                     firstName.setError("please enter your first name");
@@ -81,13 +94,25 @@ public class RegisterActivity extends AppCompatActivity{
                 {
                     regYear.setError("please enter the year you registered");
                     regYear.requestFocus();
+                }else if(putDepartment.equalsIgnoreCase("Select Department"))
+                {
+                    Toast.makeText(RegisterActivity.this, "Please select a Department", Toast.LENGTH_SHORT).show();
+                }else if(putGender.equalsIgnoreCase("Gender"))
+                {
+                    Toast.makeText(RegisterActivity.this, "Gender not selected", Toast.LENGTH_SHORT).show();
+                }else if(putSection.equalsIgnoreCase("Select Section"))
+                {
+                    Toast.makeText(RegisterActivity.this, "Select your Section", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Map<String, Object> profile = new HashMap<>();
                     profile.put("firstName", putFirstName);
                     profile.put("lastName", putLastName);
                     profile.put("sureName", putSureName);
+                    profile.put("Gender",putGender);
                     profile.put("ID", putStudentId);
+                    profile.put("Department",putDepartment);
+                    profile.put("Section",putSection);
                     profile.put("registeredYear", putRegYear);
                     documentReference.set(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -111,6 +136,9 @@ public class RegisterActivity extends AppCompatActivity{
 
             }
         });
+
+
+
     }
 
 }
