@@ -7,9 +7,10 @@
     <string name="first_name">FIRST NAME</string>
     <string name="last_name">Last Name</string>
     <string name="surname">SurName</string>
-    <string name="email">Email</string>
     <string name="studentid">StudentId</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="submit">Submit</string>
     <string name="signup">SignUp</string>
+    <string name="submit_profile">Submit Profile</string>
+    <string name="year_you_registered">Year you Registered</string>
 </resources>
