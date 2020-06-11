@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "954629217719",
+    "firebase_url": "https://hightechteacher-bc465.firebaseio.com",
+    "project_id": "hightechteacher-bc465",
+    "storage_bucket": "hightechteacher-bc465.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954629217719:android:5c3628f7b67ad4f0181c32",
+        "android_client_info": {
+          "package_name": "com.example.hightechstudents"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954629217719-srpsl3h9ptj5ltqa9mhqifq6494ei24u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-XJq45e3A-bL8TVIZ0zsq4qiIYi5CG0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954629217719-srpsl3h9ptj5ltqa9mhqifq6494ei24u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954629217719:android:8d18989dbccc10c2181c32",
+        "android_client_info": {
+          "package_name": "com.example.hightechteacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954629217719-srpsl3h9ptj5ltqa9mhqifq6494ei24u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-XJq45e3A-bL8TVIZ0zsq4qiIYi5CG0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954629217719-srpsl3h9ptj5ltqa9mhqifq6494ei24u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
