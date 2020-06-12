@@ -13,4 +13,22 @@
     <string name="signup">SignUp</string>
     <string name="submit_profile">Submit Profile</string>
     <string name="year_you_registered">Year you Registered</string>
+    <string-array name="dep">
+        <item>select department</item>
+        <item>Computer Engineering</item>
+        <item>Computer Science</item>
+        <item>Accounting</item>
+        <item>TVTE</item>
+    </string-array>
+    <string-array name="gender">
+        <item>select gender</item>
+        <item>male</item>
+        <item>female</item>
+    </string-array>
+    <string-array name="section">
+        <item>select section</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>
