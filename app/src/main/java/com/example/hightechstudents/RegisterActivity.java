@@ -23,6 +23,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.hightechstudents.R.drawable.icons8_female_profile_100;
+
 public class RegisterActivity extends AppCompatActivity{
     ImageView imageView2;
     EditText firstName, lastName, sureName, studentId, regYear;
@@ -103,6 +105,8 @@ public class RegisterActivity extends AppCompatActivity{
                 }else if(putSection.equalsIgnoreCase("Select Section"))
                 {
                     Toast.makeText(RegisterActivity.this, "Select your Section", Toast.LENGTH_SHORT).show();
+                }else if(putGender.equalsIgnoreCase("Female")){
+                    imageView2.setBackgroundResource(icons8_female_profile_100);
                 }
                 else{
                     Map<String, Object> profile = new HashMap<>();
@@ -119,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity{
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful())
                             {
-                                Intent registerIntent = new Intent(RegisterActivity.this, MainActivity.class);
+                                Intent registerIntent = new Intent(RegisterActivity.this, CodeActivity.class);
                                 registerIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(registerIntent);
                                 finish();

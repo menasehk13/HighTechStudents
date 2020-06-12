@@ -13,6 +13,9 @@
     <string name="signup">SignUp</string>
     <string name="submit_profile">Submit Profile</string>
     <string name="year_you_registered">Year you Registered</string>
+    <string name="to_continue_please_insert_the_code_which_is_provided_to_you_by_the_department">To continue Please insert the code Which is provided to you by the your Department.</string>
+    <string name="code">Code</string>
+    <string name="continueTo">Continue</string>
     <string-array name="dep">
         <item>select department</item>
         <item>Computer Engineering</item>
