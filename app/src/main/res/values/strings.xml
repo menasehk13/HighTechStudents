@@ -7,7 +7,6 @@
     <string name="first_name">FIRST NAME</string>
     <string name="last_name">Last Name</string>
     <string name="surname">SurName</string>
-    <string name="studentid">StudentId</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="submit">Submit</string>
     <string name="signup">SignUp</string>
@@ -36,4 +35,13 @@
     </string-array>
     <string name="navigation_drawer_open">open navigation drawer</string>
     <string name="navigation_drawer_close">close navigation drawer</string>
+    <string name="username">username</string>
+    <string name="studentid">StudentId</string>
+    <string name="department">department</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_0">0</string>
+    <string name="semister">Semister =</string>
+    <string name="year">Year =</string>
+    <string name="section">Section</string>
 </resources>

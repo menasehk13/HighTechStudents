@@ -64,14 +64,14 @@ public class RegisterActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 DocumentReference documentReference = proFirestore.collection("studentPro").document(userId);
-                String putFirstName = firstName.getText().toString();
-                String putLastName = lastName.getText().toString();
-                String putSureName = sureName.getText().toString();
-                String putStudentId = studentId.getText().toString();
-                String putRegYear = regYear.getText().toString();
-                String putDepartment=depSpinner.getSelectedItem().toString().trim();
-                String putGender=genderSpinner.getSelectedItem().toString().trim();
-                String putSection=secSpinner.getSelectedItem().toString().trim();
+                final String putFirstName = firstName.getText().toString();
+                final String putLastName = lastName.getText().toString();
+                final String putSureName = sureName.getText().toString();
+                final String putStudentId = studentId.getText().toString();
+                final String putRegYear = regYear.getText().toString();
+                final String putDepartment=depSpinner.getSelectedItem().toString().trim();
+                final String putGender=genderSpinner.getSelectedItem().toString().trim();
+                final String putSection=secSpinner.getSelectedItem().toString().trim();
                 if(putFirstName.isEmpty())
                 {
                     firstName.setError("please enter your first name");

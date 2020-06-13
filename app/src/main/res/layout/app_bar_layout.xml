@@ -22,7 +22,8 @@
             app:title="@string/app_name"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+            android:elevation="4dp"
+            tools:ignore="UnusedAttribute" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
