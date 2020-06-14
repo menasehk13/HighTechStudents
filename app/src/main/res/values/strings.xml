@@ -34,4 +34,6 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <string name="navigation_drawer_open">open navigation drawer</string>
+    <string name="navigation_drawer_close">close navigation drawer</string>
 </resources>

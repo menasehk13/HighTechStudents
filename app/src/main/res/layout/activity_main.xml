@@ -5,10 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
     tools:openDrawer="start">
     <include layout="@layout/app_bar_layout"/>
 <com.google.android.material.navigation.NavigationView
-    android:layout_width="234sp"
+    android:id="@+id/navView"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_gravity="start"/>
+    android:layout_gravity="start"
+    app:headerLayout="@layout/nav_header"
+    app:menu="@menu/drawer_menu"/>
 </androidx.drawerlayout.widget.DrawerLayout>
