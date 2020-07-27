@@ -22,7 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
+// this is to check my git is working!
 
 public class HomeFragment extends Fragment {
     TextView firstname,lastname,surname,department,section,year,semister,studentid;
