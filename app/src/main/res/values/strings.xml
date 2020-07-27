@@ -1,4 +1,7 @@
 <resources>
+    <string name="yeardb">Your year</string>
+    <string name="coursedb">yourcourses</string>
+    <string name="semiseters">semister</string>
     <string name="app_name">HighTechStudents</string>
     <string name="if_you_are_school_member_register_here">If You are School Member Register Here!!</string>
     <string name="login">Login</string>
@@ -15,6 +18,7 @@
     <string name="to_continue_please_insert_the_code_which_is_provided_to_you_by_the_department">To continue Please insert the code Which is provided to you by the your Department.</string>
     <string name="code">Code</string>
     <string name="continueTo">Continue</string>
+    <string name="dispaly">Display</string>
     <string-array name="dep">
         <item>select department</item>
         <item>Computer Engineering</item>
@@ -33,13 +37,13 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <string name="hello_blank_fragment">hellofrag</string>
     <string name="navigation_drawer_open">open navigation drawer</string>
     <string name="navigation_drawer_close">close navigation drawer</string>
     <string name="username">username</string>
     <string name="studentid">StudentId</string>
     <string name="department">department</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="_0">0</string>
     <string name="semister">Semister =</string>
     <string name="year">Year =</string>

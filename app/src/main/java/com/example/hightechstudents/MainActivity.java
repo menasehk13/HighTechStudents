@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         View header=navigationView.getHeaderView(0);
-        username=header.findViewById(R.id.user);
         departemnt=header.findViewById(R.id.student_view_departemnt);
         studentid=header.findViewById(R.id.studentviewid);
         SelectedItem(R.id.homeNav);
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
          });
     }
       public void SelectedItem(int Items){
-          Fragment fragment=null;
+          Fragment fragment = null;
         switch (Items){
             case R.id.homeNav:
                 fragment=new HomeFragment();
@@ -99,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
                 fragment=new CourseFragment();
                 break;
             case R.id.settingNav:
-                fragment=new SettingFragment();
+                fragment = new SettingFragment();
                 break;
             default:
         }
-          FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
+          FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frame,fragment);
         ft.commit();
         drawerLayout.closeDrawer(GravityCompat.START);
