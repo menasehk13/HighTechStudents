@@ -16,8 +16,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.time.Year;
-
 
 public class CourseFragment extends Fragment {
 
@@ -41,7 +39,7 @@ Button btn;
         //textview=view.findbyid()
         a = view.findViewById(R.id.textView6);
         b = view.findViewById(R.id.textView7);
-        c= view.findViewById(R.id.textView8);
+        c= view.findViewById(R.id.viewofhedline);
         btn = view.findViewById(R.id.buttondis);
 
         btn.setOnClickListener(new View.OnClickListener() {

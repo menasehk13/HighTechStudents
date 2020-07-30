@@ -22,6 +22,7 @@
     <string name="studentidfor_grade_view">Student id</string>
     <string name="departementforgrade">Departement</string>
     <string name="instractor_name_for_grade_view">Instractor Name</string>
+    <string name="headlinView">WEL-COME TO GRADE VIEW</string>
     <string name="courseview_for_gradeview">Course</string>
     <string name="gradeview_forstudent">Grade</string>
     <string-array name="dep">

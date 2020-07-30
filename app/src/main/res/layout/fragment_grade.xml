@@ -59,8 +59,8 @@
 
     <TextView
         android:id="@+id/courseviewforgrad"
-        android:layout_width="260dp"
-        android:layout_height="57dp"
+        android:layout_width="146dp"
+        android:layout_height="45dp"
         android:text="@string/courseview_for_gradeview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,14 +71,29 @@
 
     <TextView
         android:id="@+id/gradeviewforstudent"
-        android:layout_width="260dp"
-        android:layout_height="58dp"
+        android:layout_width="96dp"
+        android:layout_height="42dp"
         android:text="@string/gradeview_forstudent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/courseviewforgrad"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintTop_toBottomOf="@+id/insnameforgradeview"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <TextView
+        android:id="@+id/viewofhedline"
+        android:layout_width="231dp"
+        android:layout_height="35dp"
+        android:text="@string/headlinView"
+
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.331"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
