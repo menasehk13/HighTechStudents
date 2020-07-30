@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="@string/to_continue_please_insert_the_code_which_is_provided_to_you_by_the_department"
+        android:text="GTo_continue_please_insert_the_code_which_is_provided_to_you_by_the_department"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="20sp"

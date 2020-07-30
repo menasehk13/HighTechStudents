@@ -1,7 +1,5 @@
 package com.example.hightechstudents;
-
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -49,20 +47,19 @@ Button btn;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reff = FirebaseDatabase.getInstance().getReference().child("Department").child("Computer Engineering").child("Year1");
+                reff = FirebaseDatabase.getInstance().getReference().child("hightechteacher-bc465").child("Department").child("Computer Engineering").child("Year1");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String mydatabase = dataSnapshot.child("higtechteacher-bc465").getValue().toString();
 
-                        String Department = dataSnapshot.child("Department").getValue().toString();
+                       String Department = dataSnapshot.child("Department").getValue().toString();
                         String computer_Engineering = dataSnapshot.child("Computer Engineering").getValue().toString();
                         String Year1 = dataSnapshot.child("Year1").getValue().toString();
 
                         a.setText(Department);
                         b.setText(computer_Engineering);
                         c.setText(Year1);
-
-
 
                     }
 
