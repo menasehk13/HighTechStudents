@@ -42,7 +42,7 @@ Button btn;
         super.onViewCreated(view, savedInstanceState);
         //textview=view.findbyid()
         a = view.findViewById(R.id.textView6);
-        b = view.findViewsWithText(R.id.textView7);
+        b = view.findViewById(R.id.textView7);
         c= view.findViewById(R.id.textView8);
         btn = view.findViewById(R.id.buttondis);
 
@@ -70,7 +70,7 @@ Button btn;
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
-                })
+                });
             }
         });
     }

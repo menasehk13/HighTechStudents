@@ -48,4 +48,6 @@
     <string name="semister">Semister =</string>
     <string name="year">Year =</string>
     <string name="section">Section</string>
+    <string name="cousre_title">Cousre Title</string>
+    <string name="credit_hour">Credit Hour</string>
 </resources>
