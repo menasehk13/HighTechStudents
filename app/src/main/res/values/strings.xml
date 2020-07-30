@@ -15,10 +15,15 @@
     <string name="signup">SignUp</string>
     <string name="submit_profile">Submit Profile</string>
     <string name="year_you_registered">Year you Registered</string>
-    <string name="to_continue_please_insert_the_code_which_is_provided_to_you_by_the_department">To continue Please insert the code Which is provided to you by the your Department.</string>
+    <string name="to_continue_please_insert_the_code_which_is_provided_to_you_by_the_department">To continue Please insert the code Which is provided to you by the Department.</string>
     <string name="code">Code</string>
     <string name="continueTo">Continue</string>
     <string name="dispaly">Display</string>
+    <string name="studentidfor_grade_view">Student id</string>
+    <string name="departementforgrade">Departement</string>
+    <string name="instractor_name_for_grade_view">Instractor Name</string>
+    <string name="courseview_for_gradeview">Course</string>
+    <string name="gradeview_forstudent">Grade</string>
     <string-array name="dep">
         <item>select department</item>
         <item>Computer Engineering</item>
@@ -37,7 +42,7 @@
         <item>2</item>
         <item>3</item>
     </string-array>
-    <string name="hello_blank_fragment">hellofrag</string>
+    <string name="hello_blank_fragment">StudentName</string>
     <string name="navigation_drawer_open">open navigation drawer</string>
     <string name="navigation_drawer_close">close navigation drawer</string>
     <string name="username">username</string>
