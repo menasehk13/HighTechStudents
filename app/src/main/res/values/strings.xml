@@ -55,4 +55,9 @@
     <string name="section">Section</string>
     <string name="cousre_title">Cousre Title</string>
     <string name="credit_hour">Credit Hour</string>
+    <string name="my_dashboard">My DashBoard</string>
+    <string name="grade_report">Grade Report</string>
+    <string name="setting">Setting</string>
+    <string name="courses">Courses</string>
+    <string name="semister_grade">Semister Grade</string>
 </resources>
