@@ -2,12 +2,15 @@ package com.example.hightechstudents;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatSpinner;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,58 +20,33 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class SignUpActivity extends AppCompatActivity {
-EditText email,password,confirm_pass;
-Button submit;
-FirebaseAuth auth;
+
+    Spinner countrycode;
+    ArrayAdapter councode;
+    EditText phonenum;
+    String codes[]={"+251","+252","+001"};
+    String userInput,finalinput;
+
+
 @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        email=findViewById(R.id.email);
-        password=findViewById(R.id.password);
-        confirm_pass=findViewById(R.id.confirm_pass);
-        submit=findViewById(R.id.loginsignup);
-        auth=FirebaseAuth.getInstance();
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String validemail=email.getText().toString().trim();
-                String pass=password.getText().toString().trim();
-                String confirm=confirm_pass.getText().toString().trim();
-                if (validemail.isEmpty()){
-                    email.setError("Please Enter your Email");
-                } else if(pass.length()<8){
-                    password.setError("Password must be >=8");
-                } else if (!pass.equalsIgnoreCase(confirm)){
-                    confirm_pass.setError("Password Doesn't Match");
-                } else {
-                    auth.createUserWithEmailAndPassword(validemail, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()){
-                                Toast.makeText(SignUpActivity.this, "Error"+task.getException(), Toast.LENGTH_SHORT).show();
-                            }else{
-                                FirebaseUser user=auth.getCurrentUser();
-                                user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (!task.isSuccessful()){
-                                            Toast.makeText(SignUpActivity.this, "Error:"+task.getException(), Toast.LENGTH_SHORT).show();
-                                        }else{
-                                            Toast.makeText(SignUpActivity.this, "Success please Check your Email for Verification", Toast.LENGTH_LONG).show();
-                                        }
-                                    }
-                                });
+        phonenum=findViewById(R.id.phonenum);
+        countrycode=findViewById(R.id.spinnercode);
+        councode=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,codes);
+        countrycode.setAdapter(councode);
 
-                                Intent intent=new Intent(getApplicationContext(),RegisterActivity.class);
-                                intent.putExtra("email",validemail);
-                                startActivity(intent);
-                                finish();
-                            }
-                        }
-                    });
-                }
-            }
-        });
+    }
+
+    public void Signup_clicked(View view) {
+      userInput=phonenum.getText().toString().trim();
+      finalinput=countrycode.getSelectedItem()+userInput;
+      Intent intent=new Intent(getApplicationContext(),PhoneVerification.class);
+      intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+      intent.putExtra("Phone",finalinput);
+      startActivity(intent);
+      overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
+
     }
 }

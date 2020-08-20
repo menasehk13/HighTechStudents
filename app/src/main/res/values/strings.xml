@@ -16,7 +16,6 @@
     <string name="submit_profile">Submit Profile</string>
     <string name="year_you_registered">Year you Registered</string>
     <string name="to_continue_please_insert_the_code_which_is_provided_to_you_by_the_department">To continue Please insert the code Which is provided to you by the Department.</string>
-    <string name="code">Code</string>
     <string name="continueTo">Continue</string>
     <string name="dispaly">Display</string>
     <string name="studentidfor_grade_view">Student id</string>
@@ -61,10 +60,14 @@
     <string name="setting">Setting</string>
     <string name="courses">Courses</string>
     <string name="semister_grade">Semister Grade</string>
-    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
-        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
-        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
-        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
-    </style>
+    <string name="sur_name">Sur name</string>
+    <string name="id">Id</string>
+    <string name="phonenumber">phoneNumber</string>
+    <string name="code">Code</string>
+    <string name="verfiy">Verfiy</string>
+    <string name="to">To</string>
+    <string name="code_has_been_sent_to_this_phone_number">Code Has Been Sent To This Phone Number</string>
+    <string name="phone1">PhoneNumber</string>
+
+
 </resources>

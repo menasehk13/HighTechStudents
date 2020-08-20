@@ -1,182 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="120sp"
-        android:layout_height="100sp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:fitsSystemWindows="true"
-        android:src="@drawable/icons8_male_user_100"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
-
-    <EditText
-        android:id="@+id/firstname"
-        android:textColorHint="@android:color/background_dark"
-        android:layout_width="170sp"
-        android:layout_height="40sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/edit_text_border"
-        android:gravity="center"
-        android:hint="@string/first_name"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/lastname"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:id="@+id/lastname"
-        android:textColorHint="@android:color/background_dark"
-        android:layout_width="170sp"
-        android:layout_height="40sp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/edit_text_border"
-        android:gravity="center"
-        android:hint="@string/last_name"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:id="@+id/surname"
-        android:textColorHint="@android:color/background_dark"
-        android:layout_width="170sp"
-        android:layout_height="40sp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/edit_text_border"
-        android:gravity="center"
-        android:hint="@string/surname"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <Spinner
-        android:entries="@array/gender"
-        android:layout_width="120sp"
-        android:layout_height="40sp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:id="@+id/genderspinner"
-        android:background="@drawable/edit_text_border"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/surname" />
-
-    <Spinner
-        android:id="@+id/departementspinner"
-        android:layout_width="350sp"
-        android:layout_height="40sp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/edit_text_border"
-        android:entries="@array/dep"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genderspinner" />
-
-    <EditText
-        android:inputType="text"
-        android:importantForAutofill="no"
-        android:id="@+id/studentid"
-        android:textColorHint="@android:color/background_dark"
+        android:layout_marginTop="35dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/icons8_male_user_100"
+          android:layout_gravity="center"
+         tools:ignore="ContentDescription" />
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="40sp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/edit_text_border"
-        android:gravity="center"
-        android:hint="@string/studentid"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/departementspinner" />
-
-    <Spinner
-        android:id="@+id/sectionspinner"
-        android:layout_width="133dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text_border"
-        android:entries="@array/section"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentid" />
-
-    <EditText
-        android:id="@+id/regYear"
-        android:layout_width="185dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:textColorHint="@android:color/background_dark"
-        android:background="@drawable/edit_text_border"
-        android:gravity="center"
+        android:hint="@string/first_name"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center_horizontal">
+        <EditText
+            android:layout_width="355dp"
+            android:layout_height="30dp"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no"
+            android:id="@+id/first"
+            android:background="@android:color/transparent"
+            tools:ignore="LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textAlignment="center"
+        android:hint="@string/last_name"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center_horizontal">
+        <EditText
+            android:layout_width="355dp"
+            android:layout_height="30dp"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no"
+          android:id="@+id/last_name"
+            android:background="@android:color/transparent"
+            tools:ignore="LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textAlignment="center"
+        android:hint="@string/sur_name"
+        app:shapeAppearance="@style/ThemeOverlay.AppCompat.Light"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center_horizontal">
+        <EditText
+            android:layout_width="355dp"
+            android:layout_height="30dp"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no"
+            android:id="@+id/surname"
+            android:background="@android:color/transparent"
+            tools:ignore="LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textAlignment="center"
+        android:hint="@string/id"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center_horizontal">
+        <EditText
+            android:layout_width="355dp"
+            android:layout_height="30dp"
+            android:inputType="text"
+            android:importantForAutofill="no"
+            android:id="@+id/Id"
+            android:background="@android:color/transparent"
+            tools:ignore="LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textAlignment="center"
         android:hint="@string/year_you_registered"
-        android:importantForAutofill="no"
-        android:inputType="date"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sectionspinner" />
+        android:background="@drawable/edit_text_background"
+        android:gravity="center_horizontal">
+        <EditText
+            android:layout_width="355dp"
+            android:layout_height="30dp"
+            android:inputType="date"
+            android:importantForAutofill="no"
+            android:id="@+id/Year_Registered"
+            android:background="@android:color/transparent"
+            tools:ignore="LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/departement"
+        android:layout_marginTop="42dp"
+        android:background="@android:drawable/spinner_dropdown_background"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/Section"
+        android:layout_marginTop="12dp"
+        android:background="@android:drawable/spinner_background"/>
 
     <Button
-        android:id="@+id/submitBtn"
-        android:layout_width="wrap_content"
+        android:id="@+id/submit"
+        android:layout_width="242dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/transparent"
-        android:focusableInTouchMode="true"
-        android:text="@string/submit_profile"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="@string/submit" />
+</LinearLayout>

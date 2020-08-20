@@ -29,33 +29,29 @@ public class RegisterActivity extends AppCompatActivity{
     ImageView imageView2;
     EditText firstName, lastName, sureName, studentId, regYear;
     Button submitPro;
-    Spinner genderSpinner, depSpinner, secSpinner;
+    Spinner  depSpinner, secSpinner;
     FirebaseAuth proFirebaseAuth;
     FirebaseFirestore proFirestore;
     String userId;
-    String deprt[]={"Select Department","Computer Engineering","Computer Science","Accounting","TVTE"};
-    String secs[]={"Select Section","1","2","3"};
-    String gen[]={"Gender","Male","Female"};
-    ArrayAdapter genderadapter,sectionadapter,departementadapter;
+    String deprt[]={"--Select Department--","Computer Engineering","Computer Science","Accounting","TVTE"};
+    String secs[]={"--Select Section--","1","2","3"};
+    ArrayAdapter sectionadapter,departementadapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        imageView2 = findViewById(R.id.imageView2);
-        firstName = findViewById(R.id.firstname);
-        lastName = findViewById(R.id.lastname);
-        sureName = findViewById(R.id.surname);
-        studentId = findViewById(R.id.studentid);
-        regYear = findViewById(R.id.regYear);
-        submitPro = findViewById(R.id.submitBtn);
-        genderSpinner = findViewById(R.id.genderspinner);
-        depSpinner = findViewById(R.id.departementspinner);
-        secSpinner = findViewById(R.id.sectionspinner);
-         genderadapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,gen);
-         genderSpinner.setAdapter(genderadapter);
-         sectionadapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,secs);
-         secSpinner.setAdapter(sectionadapter);
-         departementadapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,deprt);
+        firstName=findViewById(R.id.first);
+        lastName=findViewById(R.id.last_name);
+        sureName=findViewById(R.id.surname);
+        studentId=findViewById(R.id.Id);
+        regYear=findViewById(R.id.Year_Registered);
+        secSpinner=findViewById(R.id.Section);
+        depSpinner=findViewById(R.id.departement);
+        submitPro=findViewById(R.id.submit);
+        sectionadapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,secs);
+        departementadapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,deprt);
+        secSpinner.setAdapter(sectionadapter);
+        depSpinner.setAdapter(departementadapter);
         proFirebaseAuth = FirebaseAuth.getInstance();
         proFirestore = FirebaseFirestore.getInstance();
         userId = proFirebaseAuth.getCurrentUser().getUid();
@@ -70,7 +66,6 @@ public class RegisterActivity extends AppCompatActivity{
                 final String putStudentId = studentId.getText().toString();
                 final String putRegYear = regYear.getText().toString();
                 final String putDepartment=depSpinner.getSelectedItem().toString().trim();
-                final String putGender=genderSpinner.getSelectedItem().toString().trim();
                 final String putSection=secSpinner.getSelectedItem().toString().trim();
                 if(putFirstName.isEmpty())
                 {
@@ -99,21 +94,12 @@ public class RegisterActivity extends AppCompatActivity{
                 }else if(putDepartment.equalsIgnoreCase("Select Department"))
                 {
                     Toast.makeText(RegisterActivity.this, "Please select a Department", Toast.LENGTH_SHORT).show();
-                }else if(putGender.equalsIgnoreCase("Gender"))
-                {
-                    Toast.makeText(RegisterActivity.this, "Gender not selected", Toast.LENGTH_SHORT).show();
-                }else if(putSection.equalsIgnoreCase("Select Section"))
-                {
-                    Toast.makeText(RegisterActivity.this, "Select your Section", Toast.LENGTH_SHORT).show();
-                }else if(putGender.equalsIgnoreCase("Female")){
-                    imageView2.setBackgroundResource(icons8_female_profile_100);
                 }
                 else{
                     Map<String, Object> profile = new HashMap<>();
                     profile.put("firstName", putFirstName);
                     profile.put("lastName", putLastName);
                     profile.put("sureName", putSureName);
-                    profile.put("Gender",putGender);
                     profile.put("ID", putStudentId);
                     profile.put("Department",putDepartment);
                     profile.put("Section",putSection);
