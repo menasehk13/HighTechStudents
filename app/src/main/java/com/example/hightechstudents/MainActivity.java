@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity  {
                 Intent intent=new Intent(MainActivity.this,GradeView.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
             }
         });
         course.setOnClickListener(new View.OnClickListener() {
