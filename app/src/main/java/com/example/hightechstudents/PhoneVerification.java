@@ -39,6 +39,7 @@ String Phonerecived,VerficationId;
         textView=findViewById(R.id.phonenumenterd);
         Phonerecived=getIntent().getStringExtra("Phone");
         textView.setText(Phonerecived);
+        SendVerficationCode(Phonerecived);
         verfiy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +47,7 @@ String Phonerecived,VerficationId;
                     addcode.setError("Enter The Code we Have Sent");
                     addcode.isFocusable();
                 }else{
-                    SendVerficationCode(Phonerecived);
+
                     VerfiyCode(Phonerecived);
 
                 }
@@ -80,7 +81,7 @@ String Phonerecived,VerficationId;
         }
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(PhoneVerification.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(PhoneVerification.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     };
     public  void VerfiyCode(String code){

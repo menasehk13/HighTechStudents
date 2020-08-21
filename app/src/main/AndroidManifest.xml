@@ -4,6 +4,7 @@
     package="com.example.hightechstudents">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
 
     <application
         android:allowBackup="true"
@@ -13,19 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".PhoneVerification"></activity>
+        <activity android:name=".ProfileView"></activity>
+        <activity android:name=".PhoneVerification" />
         <activity android:name=".GradeView" />
         <activity android:name=".CodeActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".RegisterActivity">
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

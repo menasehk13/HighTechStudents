@@ -17,10 +17,10 @@
 
         <Spinner
             android:id="@+id/spinnercode"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="80dp"
+            android:layout_height="44dp"
             android:layout_gravity="bottom"
-            android:layout_marginStart="54dp"
+            android:layout_marginStart="24dp"
             android:layout_marginLeft="104dp"
             android:background="@android:drawable/spinner_background"
             android:gravity="bottom" />
@@ -28,22 +28,22 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
             android:layout_toEndOf="@+id/spinnercode"
             android:layout_toRightOf="@+id/spinnercode"
-            android:hint="@string/phonenumber"
             android:background="@drawable/edit_text_background"
-            android:layout_marginRight="12dp"
-            android:layout_marginEnd="12dp">
+            android:hint="@string/phonenumber">
 
             <EditText
-                android:layout_marginLeft="12dp"
+                android:id="@+id/phonenum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:id="@+id/phonenum"
-                android:background="@android:color/transparent"
                 android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:background="@android:color/transparent"
                 android:importantForAutofill="no"
+                android:inputType="phone"
                 tools:ignore="LabelFor" />
         </com.google.android.material.textfield.TextInputLayout>
 

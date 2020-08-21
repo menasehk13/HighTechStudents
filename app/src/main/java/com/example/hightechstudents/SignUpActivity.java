@@ -46,7 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
       intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
       intent.putExtra("Phone",finalinput);
       startActivity(intent);
-      overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
     }
 }

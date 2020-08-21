@@ -20,13 +20,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.example.hightechstudents.R.drawable.icons8_female_profile_100;
 
 public class RegisterActivity extends AppCompatActivity{
-    ImageView imageView2;
     EditText firstName, lastName, sureName, studentId, regYear;
     Button submitPro;
     Spinner  depSpinner, secSpinner;
@@ -36,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity{
     String deprt[]={"--Select Department--","Computer Engineering","Computer Science","Accounting","TVTE"};
     String secs[]={"--Select Section--","1","2","3"};
     ArrayAdapter sectionadapter,departementadapter;
+    int year= Calendar.getInstance().get(Calendar.YEAR);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +68,7 @@ public class RegisterActivity extends AppCompatActivity{
                 final String putRegYear = regYear.getText().toString();
                 final String putDepartment=depSpinner.getSelectedItem().toString().trim();
                 final String putSection=secSpinner.getSelectedItem().toString().trim();
+                final String putPhoneNumber=getIntent().getStringExtra("PhoneOfUser");
                 if(putFirstName.isEmpty())
                 {
                     firstName.setError("please enter your first name");
@@ -87,7 +89,7 @@ public class RegisterActivity extends AppCompatActivity{
                     studentId.setError("please enter your id");
                     studentId.requestFocus();
                 }
-                else if(putRegYear.isEmpty())
+                else if(putRegYear.isEmpty()|| putRegYear.length()>year)
                 {
                     regYear.setError("please enter the year you registered");
                     regYear.requestFocus();
@@ -104,6 +106,7 @@ public class RegisterActivity extends AppCompatActivity{
                     profile.put("Department",putDepartment);
                     profile.put("Section",putSection);
                     profile.put("registeredYear", putRegYear);
+                    profile.put("Phone",putPhoneNumber);
                     documentReference.set(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
