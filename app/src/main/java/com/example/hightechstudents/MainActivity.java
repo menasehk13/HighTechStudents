@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity  {
     CardView gradereport,course,setting,semister_grade,classroom;
+    ImageView proView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,15 @@ public class MainActivity extends AppCompatActivity  {
         setting=findViewById(R.id.setting);
         semister_grade=findViewById(R.id.semister_grade);
         classroom=findViewById(R.id.classroom);
+        proView=findViewById(R.id.proView);
+        proView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent proIntent = new Intent(MainActivity.this, ProfileView.class);
+                proIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(proIntent);
+            }
+        });
         gradereport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
