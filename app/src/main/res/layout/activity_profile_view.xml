@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileView"
-    android:background="@drawable/profilebackground1">
+    android:background="@drawable/backgroundforuserprofile">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
