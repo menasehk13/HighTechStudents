@@ -30,6 +30,8 @@
         android:layout_alignParentRight="true"
         android:background="@drawable/background_home"
         android:src="@drawable/icons8_male"
+        android:clickable="true"
+        android:onClick="profileClicked"
         tools:ignore="ContentDescription" />
 </RelativeLayout>
     <GridLayout

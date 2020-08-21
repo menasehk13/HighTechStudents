@@ -14,12 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".ProfileView"></activity>
+        <activity android:name=".Setting"></activity>
+        <activity android:name=".SemisterGradeView" />
+        <activity android:name=".ClassRoom" />
+        <activity android:name=".CoursePerSemister" />
+        <activity android:name=".ProfileView" />
         <activity android:name=".PhoneVerification" />
         <activity android:name=".GradeView" />
         <activity android:name=".CodeActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
