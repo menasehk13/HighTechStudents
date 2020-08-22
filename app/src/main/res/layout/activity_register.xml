@@ -27,11 +27,13 @@
         android:background="@drawable/edit_text_background"
         android:gravity="center_horizontal">
         <EditText
-            android:layout_width="355dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:importantForAutofill="no"
             android:id="@+id/first"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:background="@android:color/transparent"
             tools:ignore="LabelFor" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -46,13 +48,15 @@
         android:background="@drawable/edit_text_background"
         android:gravity="center_horizontal">
         <EditText
-            android:layout_width="355dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:importantForAutofill="no"
-          android:id="@+id/last_name"
+            android:id="@+id/last_name"
             android:background="@android:color/transparent"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -66,13 +70,15 @@
         android:background="@drawable/edit_text_background"
         android:gravity="center_horizontal">
         <EditText
-            android:layout_width="355dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:importantForAutofill="no"
             android:id="@+id/surname"
             android:background="@android:color/transparent"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -85,13 +91,15 @@
         android:background="@drawable/edit_text_background"
         android:gravity="center_horizontal">
         <EditText
-            android:layout_width="355dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:inputType="text"
             android:importantForAutofill="no"
             android:id="@+id/Id"
             android:background="@android:color/transparent"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -104,13 +112,15 @@
         android:background="@drawable/edit_text_background"
         android:gravity="center_horizontal">
         <EditText
-            android:layout_width="355dp"
-            android:layout_height="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:inputType="date"
             android:importantForAutofill="no"
             android:id="@+id/Year_Registered"
             android:background="@android:color/transparent"
-            tools:ignore="LabelFor" />
+            tools:ignore="LabelFor"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
     </com.google.android.material.textfield.TextInputLayout>
     <Spinner
         android:layout_width="wrap_content"
@@ -141,5 +151,6 @@
         android:layout_marginTop="55dp"
         android:gravity="center"
         android:padding="12dp"
-        android:text="@string/submit" />
+        android:text="@string/submit"
+        android:onClick="SubmitProfile"/>
 </LinearLayout>
