@@ -7,5 +7,81 @@
     tools:context=".ProfileView"
     android:background="@drawable/background1">
 
+    <ImageView
+        android:id="@+id/proImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icons8_male"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="411dp"
+        android:layout_height="490dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/proDep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="department"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/proSec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="section"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/proId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textSize="21sp" />
+        <TextView
+            android:id="@+id/proFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="full name"
+            android:textSize="21sp" />
+        <TextView
+            android:id="@+id/proRegisteredYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="registered year"
+            android:textSize="21sp" />
+        <TextView
+            android:id="@+id/proPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textSize="21sp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/proName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="user name"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.886" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
