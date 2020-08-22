@@ -1,87 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileView"
+    android:orientation="vertical"
     android:background="@drawable/background1">
 
     <ImageView
         android:id="@+id/proImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="110dp"
+        android:transitionName="imageview"
+        android:background="@drawable/background_home"
         android:src="@drawable/icons8_male"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028" />
+        tools:ignore="ContentDescription"
+        tools:targetApi="lollipop" />
+<LinearLayout
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="30dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginLeft="15dp"
+    android:background="@android:color/transparent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="22dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="490dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="0"
+           android:textStyle="bold"
+           android:textColor="@android:color/black"
+           android:id="@+id/yearcount"
+           android:textSize="40sp"
+           android:layout_gravity="center"/>
 
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="22dp"
+        android:layout_marginLeft="33dp"
+        android:background="@android:color/holo_blue_dark">
         <TextView
-            android:id="@+id/proDep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="department"
-            android:textSize="21sp" />
-
+            android:text="0"
+            android:id="@+id/semistercount"
+            android:textSize="40sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="22dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="73dp"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="73dp">
         <TextView
-            android:id="@+id/proSec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="section"
-            android:textSize="21sp" />
-
-        <TextView
-            android:id="@+id/proId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ID"
-            android:textSize="21sp" />
-        <TextView
-            android:id="@+id/proFullName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="full name"
-            android:textSize="21sp" />
-        <TextView
-            android:id="@+id/proRegisteredYear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="registered year"
-            android:textSize="21sp" />
-        <TextView
-            android:id="@+id/proPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ID"
-            android:textSize="21sp" />
-
-
-    </LinearLayout>
-
+            android:text="0"
+            android:id="@+id/sectioncount"
+            android:textSize="40sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp">
     <TextView
-        android:id="@+id/proName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="user name"
-        android:textSize="21sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
+        android:text="@string/year"
+        android:layout_marginLeft="30dp"
+        android:textSize="15sp"
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+        android:layout_marginStart="60dp" />
+    <TextView
 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/semister"
+        android:textSize="15sp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/section"
+        android:textSize="15sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginRight="60dp"
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+        android:layout_marginEnd="50dp" />
+</LinearLayout>
+    <TextView
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/first_name"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:drawableTop="@drawable/ic_baseline_account_circle_24"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:id="@+id/nameofuser"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/department"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:drawableTop="@drawable/icons8_department_shop"
+        android:textColor="@android:color/black"
+        android:gravity="center_horizontal"
+        android:id="@+id/userdepartemnt"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phonenumber"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:drawableTop="@drawable/ic_baseline_call_24"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:id="@+id/userphonenumber"/>
+</LinearLayout>

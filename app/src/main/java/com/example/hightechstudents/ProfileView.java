@@ -24,38 +24,6 @@ public class ProfileView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_view);
-        proDep = findViewById(R.id.proDep);
-        proSec = findViewById(R.id.proSec);
-        proId = findViewById(R.id.proId);
-        proFullName = findViewById(R.id.proFullName);
-        proPhone = findViewById(R.id.proPhone);
-        proRegYear = findViewById(R.id.proRegisteredYear);
-        proName = findViewById(R.id.proName);
-        proFirestore = FirebaseFirestore.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
-        userId = firebaseAuth.getCurrentUser().getUid();
-        proReference = proFirestore.collection("studentPro").document(userId);
-        proReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                String fullName = "Full Name:  "+documentSnapshot.getString("FirstName")+" "+documentSnapshot.getString("Lastname")+" "+documentSnapshot.getString("surename");
-                String section = "Section: "+ documentSnapshot.getString("section");
-                String departement = "Department: "+documentSnapshot.getString("Department");
-                String id = "ID: "+documentSnapshot.getString("Id");
-                String year = "Registered Year: "+documentSnapshot.getString("Year Registered");
-                String phone = "Phone: "+documentSnapshot.getString("phone");
-                String name =documentSnapshot.getString("Firstname")+" "+documentSnapshot.getString("Lastname");
-                proDep.setText(departement);
-                proSec.setText(section);
-                proId.setText(id);
-                proFullName.setText(fullName);
-                proName.setText(name);
-                proRegYear.setText(year);
-                proPhone.setText(phone);
-            }
-        });
-
-
 
     }
 }

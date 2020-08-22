@@ -1,6 +1,7 @@
 package com.example.hightechstudents;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,9 +11,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -40,11 +44,16 @@ public class MainActivity extends AppCompatActivity  {
         classroom=findViewById(R.id.classroom);
         proView=findViewById(R.id.proView);
         proView.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
                 Intent proIntent = new Intent(MainActivity.this, ProfileView.class);
                 proIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(proIntent);
+               Pair[] pairs=new Pair[1];
+               pairs[0]=new Pair<View,String>(proView,"imageview");
+               ActivityOptions options= ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pairs);
+               overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+               startActivity(proIntent,options.toBundle());
             }
         });
         gradereport.setOnClickListener(new View.OnClickListener() {
@@ -96,10 +105,4 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-    public void profileClicked(View view) {
-        Intent intent=new Intent(MainActivity.this,ProfileView.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-    }
 }

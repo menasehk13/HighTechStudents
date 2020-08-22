@@ -50,8 +50,8 @@
     <string name="department">department</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="_0">0</string>
-    <string name="semister">Semister =</string>
-    <string name="year">Year =</string>
+    <string name="semister">Semister</string>
+    <string name="year">Year</string>
     <string name="section">Section</string>
     <string name="cousre_title">Cousre Title</string>
     <string name="credit_hour">Credit Hour</string>

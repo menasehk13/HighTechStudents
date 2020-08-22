@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" android:background="@drawable/android_mobile">
+    tools:context=".MainActivity"
+    android:background="@drawable/android_mobile">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -32,8 +33,12 @@
         android:background="@drawable/background_home"
         android:src="@drawable/icons8_male"
         android:clickable="true"
-        android:onClick="profileClicked"
-        tools:ignore="ContentDescription" />
+        android:contextClickable="true"
+        tools:ignore="ContentDescription"
+        android:transitionName="imageview"
+        tools:targetApi="m"
+        android:focusable="true"
+        />
 </RelativeLayout>
     <GridLayout
         android:layout_width="match_parent"
