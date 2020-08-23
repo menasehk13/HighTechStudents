@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -36,53 +37,31 @@ public class ProfileView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_view);
-proDep=findViewById(R.id.userdepartemnt);
-proSec=findViewById(R.id.sectioncount);
-proId=findViewById(R.id.studentviewid);
-proName=findViewById(R.id.nameofuser);
-proPhone=findViewById(R.id.userphonenumber);
-proRegYear=findViewById(R.id.yearcount);
-firebaseAuth=FirebaseAuth.getInstance();
-proFirestore=FirebaseFirestore.getInstance();
-userId=firebaseAuth.getCurrentUser().getUid();
-proReference=proFirestore.collection("StudentPro").document(userId);
-proReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-    @Override
-    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-         if (task.isSuccessful()){
-             DocumentSnapshot dataSnapshot=task.getResult();
-             if (dataSnapshot.exists()){
-              Log.d("User", valueOf(dataSnapshot.getData()));
-                 proName.setText(format("%s %s %s", valueOf(dataSnapshot.get("Firstname")), valueOf(dataSnapshot.get("Lastname")), valueOf(dataSnapshot.get("surname"))));
-                 proDep.setText(valueOf(dataSnapshot.get("Department")));
-                 proPhone.setText(valueOf(dataSnapshot.get("phone")));
-                 proSec.setText(valueOf(dataSnapshot.get("section")));
-                 String year= (String) dataSnapshot.get("Year Registered");
-                 int regyear=Integer.parseInt(year);
-                 int currentYear=Calendar.getInstance().get(Calendar.YEAR);
-                if (regyear==currentYear){
-                    proRegYear.setText("1st");
-                }
-                if (regyear==regyear+1){
-                    proRegYear.setText("2nd");
-                }else if (regyear==regyear+2){
-                    proRegYear.setText("3rd");
-                }else if (regyear==regyear+3){
-                    proRegYear.setText("4th");
-                }else if (regyear==regyear+4){
-                    proRegYear.setText("5th");
-                }
+        proName=findViewById(R.id.username);
+        proDep=findViewById(R.id.userderpartmnet);
+        proId=findViewById(R.id.userstudentid);
+        proPhone=findViewById(R.id.userstudentphone);
+        proSec=findViewById(R.id.sectioncount);
+        firebaseAuth=FirebaseAuth.getInstance();
+        userId=firebaseAuth.getCurrentUser().getUid();
+        proFirestore=FirebaseFirestore.getInstance();
+        proReference=proFirestore.collection("StudentPro").document(userId);
+        proReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+               DocumentSnapshot snapshot=task.getResult();
+               if (snapshot.exists()){
+                   proName.setText(String.format("%s %s %s", String.valueOf(snapshot.get("Firstname")), String.valueOf(snapshot.get("Lastname")), String.valueOf(snapshot.get("surname"))));
+                   proDep.setText(String.valueOf(snapshot.get("Department")));
+                   proId.setText(String.valueOf(snapshot.get("Id")));
+                   proPhone.setText(String.valueOf(snapshot.get("phone")));
+                   proSec.setText(String.valueOf(snapshot.get("section")));
 
-             }else {
+               }else{
+                   Log.d("Error",task.getException().getMessage());
+               }
 
-                 Log.d("Error","nosuchdocuments");
-             }
-         }else{
-
-             Log.d("Error Task",task.getException().getMessage());
-
-         }
-    }
-});
+            }
+        });
     }
 }
