@@ -33,6 +33,7 @@
         android:background="@drawable/background_home"
         android:src="@drawable/icons8_male"
         android:clickable="true"
+        android:onClick="Image_button_clicked"
         android:contextClickable="true"
         tools:ignore="ContentDescription"
         android:transitionName="imageview"

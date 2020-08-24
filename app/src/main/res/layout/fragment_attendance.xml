@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".attendanceFragment">
+
+  <CalendarView
+      android:layout_marginTop="5dp"
+      android:layout_width="match_parent"
+      android:layout_height="350dp"
+      android:id="@+id/calenderview"/>
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="12dp"
+           android:layout_marginRight="12dp"
+           android:background="@drawable/attendance_background">
+           <TextView
+               android:layout_marginLeft="12dp"
+               android:layout_marginRight="12dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Days of Absence"
+               android:textAlignment="center"
+               android:gravity="center_horizontal"
+               android:id="@+id/absence"
+               android:textSize="23sp"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="0"
+               android:textSize="23sp"
+               android:textColor="@color/colorAccent"
+             android:layout_marginLeft="300dp"
+                />
+       </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="33dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/attendance_background">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/days_you_attended"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:id="@+id/attendend"
+            android:textSize="23sp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/colorPrimary"
+            android:textSize="23sp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginStart="300dp" />
+    </RelativeLayout>
+
+</LinearLayout>

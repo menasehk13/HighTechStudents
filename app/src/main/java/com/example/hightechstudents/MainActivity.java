@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity  {
         setting=findViewById(R.id.setting);
         semister_grade=findViewById(R.id.semister_grade);
         classroom=findViewById(R.id.classroom);
+
         gradereport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,11 +76,20 @@ public class MainActivity extends AppCompatActivity  {
         classroom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(MainActivity.this,ClassRoom.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
             }
         });
 
     }
 
 
+    public void Image_button_clicked(View view) {
+        Intent intent=new Intent(MainActivity.this,ProfileView.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+    }
 }

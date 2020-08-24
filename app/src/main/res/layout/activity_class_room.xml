@@ -6,4 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ClassRoom">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/topNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintCircleRadius="33dp"
+        app:itemRippleColor="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/drawer_menu"
+        android:elevation="1dp"
+         app:labelVisibilityMode="selected"
+        android:background="@android:color/holo_blue_dark"
+        tools:targetApi="lollipop"
+        />
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="595dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

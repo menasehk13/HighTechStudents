@@ -2,17 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-    <group android:checkableBehavior="single">
-        <item android:id="@+id/homeNav"
-            android:title="Home"/>
-        <item android:id="@+id/gradeNav"
-            android:title="Grade"/>
-        <item android:id="@+id/courseNav"
-            android:title="Course"/>
-        <item android:id="@+id/settingNav"
-            android:title="Setting"/>
-        <item android:id="@+id/profileNav"
-            android:title="Profile"/>
-    </group>
+   <item android:title="Upcoming Class" android:icon="@drawable/ic_baseline_menu_book_24" android:id="@+id/upcomingclass"/>
+    <item android:title="Attendenace" android:icon="@drawable/icons8_attendance_30" android:id="@+id/attendance"/>
 
 </menu>

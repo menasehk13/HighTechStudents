@@ -87,6 +87,7 @@
     <string name="code_has_been_sent_to_this_phone_number">Code Has Been Sent To This Phone Number</string>
     <string name="phone1">PhoneNumber</string>
     <string name="logout">Logout</string>
+    <string name="days_you_attended">Days You Attended</string>
 
 
 </resources>

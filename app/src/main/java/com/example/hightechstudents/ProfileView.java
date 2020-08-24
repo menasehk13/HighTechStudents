@@ -52,7 +52,10 @@ public class ProfileView extends AppCompatActivity implements View.OnClickListen
         backbutton.setOnClickListener(this);
         userId=firebaseAuth.getCurrentUser().getUid();
         proFirestore=FirebaseFirestore.getInstance();
-        proReference=proFirestore.collection("StudentPro").document(userId);
+        Sharedpref sharedpref=new Sharedpref(getApplicationContext());
+        String dep=sharedpref.getDepartment();
+
+        proReference=proFirestore.collection(dep).document(userId);
         proReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {

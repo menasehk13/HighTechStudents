@@ -35,7 +35,6 @@ public class RegisterActivity extends AppCompatActivity{
     FirebaseAuth proFirebaseAuth;
     FirebaseFirestore proFirestore;
     String user;
-    String fname,lname,sname,id,yearreg,deprtm,sect,phone;
     String deprt[]={"--Select Department--","Computer Engineering","Computer Science","Accounting","TVTE"};
     String secs[]={"--Select Section--","1","2","3"};
     ArrayAdapter sectionadapter,departementadapter;
@@ -58,22 +57,27 @@ public class RegisterActivity extends AppCompatActivity{
         departementadapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,deprt);
          depSpinner.setAdapter(departementadapter);
          secSpinner.setAdapter(sectionadapter);
+
+
+    }
+
+    public void SubmitProfile(View view) {
+        DocumentReference reference=proFirestore.collection(depSpinner.getSelectedItem().toString()).document(user);
+        final String fname,lname,sname,id,yearreg,deprt,sect,phone;
         fname=firstName.getText().toString().trim();
         lname=lastName.getText().toString().trim();
         sname=sureName.getText().toString().trim();
         id=studentId.getText().toString().trim();
-        deprtm=depSpinner.getSelectedItem().toString().trim();
+        deprt=depSpinner.getSelectedItem().toString().trim();
         sect=secSpinner.getSelectedItem().toString().trim();
         yearreg=regYear.getText().toString().trim();
+        Sharedpref sharedpref=new Sharedpref(getApplicationContext());
+        sharedpref.SaveUserCollection(deprt);
         phone=getIntent().getStringExtra("PhoneOfUser");
         if (depSpinner.getSelectedItem().equals("--Select Department--")&&secSpinner.getSelectedItem().equals("--Select Section--")){
             Toast.makeText(this, "Please Select a Departement or please Select your Section", Toast.LENGTH_SHORT).show();
             return;
         }
-    }
-
-    public void SubmitProfile(View view) {
-        DocumentReference reference=proFirestore.collection(deprtm).document(user);
         if (fname.isEmpty()||lname.isEmpty()||sname.isEmpty()){
             firstName.setError("Fill The Box");
             firstName.setFocusable(true);
@@ -101,6 +105,7 @@ public class RegisterActivity extends AppCompatActivity{
                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                   overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                   startActivity(intent);
+                  intent.putExtra("Depart",deprt);
               }else {
                   Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
               }
