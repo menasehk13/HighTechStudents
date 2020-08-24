@@ -101,8 +101,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="5dp"
         android:text="@string/year"
         android:textColor="@android:color/black"
@@ -198,4 +198,28 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userstudentid" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/ic_baseline_arrow_back_24"
+        android:backgroundTint="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/backbutton"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/logout"
+        android:backgroundTint="@android:color/transparent"
+        tools:targetApi="lollipop"
+        android:onClick="Logout_Clicked"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
