@@ -40,8 +40,8 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void Signup_clicked(View view) {
-      userInput=phonenum.getText().toString().trim();
-      finalinput=countrycode.getSelectedItem()+userInput;
+      userInput = phonenum.getText().toString().trim();
+      finalinput = countrycode.getSelectedItem()+userInput;
       Intent intent=new Intent(getApplicationContext(),PhoneVerification.class);
       intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
       intent.putExtra("Phone",finalinput);

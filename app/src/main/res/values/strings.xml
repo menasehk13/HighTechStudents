@@ -1,6 +1,6 @@
 <resources>
     <string name="yeardb">Your year</string>
-    <string name="coursedb">yourcourses</string>
+    <string name="coursedb">Courses</string>
     <string name="semiseters">semister</string>
     <string name="app_name">HighTechStudents</string>
     <string name="if_you_are_school_member_register_here">If You are School Member Register Here!!</string>
@@ -18,6 +18,11 @@
     <string name="to_continue_please_insert_the_code_which_is_provided_to_you_by_the_department">To continue Please insert the code Which is provided to you by the Department.</string>
     <string name="continueTo">Continue</string>
     <string name="dispaly">Display</string>
+    <string name="departementforc"></string>
+    <string name="yearforc"></string>
+    <string name="semisterforc"></string>
+    <string name="coursedisplay">DISPLAY_COURSES</string>
+    <string name="button">Display</string>
     <string name="studentidfor_grade_view">Student id</string>
     <string name="departementforgrade">Departement</string>
     <string name="instractor_name_for_grade_view">Instractor Name</string>
@@ -30,6 +35,19 @@
         <item>Computer Science</item>
         <item>Accounting</item>
         <item>TVTE</item>
+    </string-array>
+    <string-array name="Year">
+
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+
+    </string-array>
+    <string-array name="semister">
+        <item>1</item>
+        <item>2</item>
     </string-array>
     <string-array name="gender">
         <item>select gender</item>
