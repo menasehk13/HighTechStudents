@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:id="@+id/gradeTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TableRow>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Course Name"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Credit Hour"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Grade"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/courseGradeList"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/courseCreditHour"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/courseGrade"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"/>
+        </TableRow>
+
+    </TableLayout>
+
+
+</LinearLayout>
