@@ -1,159 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileView"
-    android:orientation="vertical"
     android:background="@drawable/background1">
 
     <ImageView
-        android:id="@+id/proImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="110dp"
-        android:transitionName="imageview"
+        android:id="@+id/imageView2"
+        android:layout_width="71dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/background_home"
-        android:src="@drawable/icons8_male"
-        tools:ignore="ContentDescription"
-        tools:targetApi="lollipop" />
-<LinearLayout
-    android:layout_gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="30dp"
-    android:layout_marginRight="15dp"
-    android:layout_marginLeft="15dp"
-    android:background="@android:color/transparent">
-    <androidx.cardview.widget.CardView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        app:cardCornerRadius="22dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp">
+        android:src="@drawable/icons8_male_user_100"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="0"
-           android:textStyle="bold"
-           android:textColor="@android:color/black"
-           android:id="@+id/yearcount"
-           android:textSize="40sp"
-           android:layout_gravity="center"/>
-
-    </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:id="@+id/cardView4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="217dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
+        android:layout_marginBottom="29dp"
+        app:cardBackgroundColor="@android:color/darker_gray"
         app:cardCornerRadius="22dp"
-        android:layout_marginLeft="33dp"
-        android:background="@android:color/holo_blue_dark">
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
+            android:id="@+id/yearcount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="0"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        app:cardBackgroundColor="@android:color/darker_gray"
+        app:cardCornerRadius="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <TextView
             android:id="@+id/semistercount"
-            android:textSize="40sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"/>
+            android:text="0"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:id="@+id/cardView5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="217dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        app:cardBackgroundColor="@android:color/darker_gray"
         app:cardCornerRadius="22dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginRight="73dp"
-        android:background="@android:color/holo_blue_dark"
-        android:layout_marginStart="33dp"
-        android:layout_marginEnd="73dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:id="@+id/sectioncount"
-            android:textSize="40sp"
             android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textColor="@android:color/black"/>
+            android:text="0"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:id="@+id/sectioncount"/>
     </androidx.cardview.widget.CardView>
-</LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="5dp">
+
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="5dp"
         android:text="@string/year"
-        android:layout_marginLeft="30dp"
-        android:textSize="15sp"
-        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
-        android:layout_marginStart="60dp" />
-    <TextView
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="5dp"
         android:text="@string/semister"
-        android:textSize="15sp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginStart="60dp"
-        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
-        />
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
         android:text="@string/section"
-        android:textSize="15sp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginRight="60dp"
-        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
-        android:layout_marginEnd="50dp" />
-</LinearLayout>
-    <TextView
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/cardView5" />
 
+    <TextView
+        android:textAllCaps="true"
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="@string/first_name"
-        android:layout_marginTop="30dp"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:layout_marginTop="46dp"
         android:drawableTop="@drawable/ic_baseline_account_circle_24"
-        android:textAlignment="center"
         android:gravity="center_horizontal"
-        android:id="@+id/nameofuser"/>
+        android:text="@string/first_name"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
     <TextView
-        android:layout_marginTop="10dp"
+        android:id="@+id/userderpartmnet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/department"
-        android:textSize="20sp"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:textAlignment="center"
+        android:layout_marginTop="15dp"
         android:drawableTop="@drawable/icons8_department_shop"
-        android:textColor="@android:color/black"
         android:gravity="center_horizontal"
-        android:id="@+id/userdepartemnt"/>
+        android:text="@string/department"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
     <TextView
-        android:layout_marginTop="10dp"
+        android:id="@+id/userstudentid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/phonenumber"
-        android:textSize="20sp"
-        android:textAllCaps="true"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:drawableTop="@drawable/ic_baseline_call_24"
-        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:drawableTop="@drawable/ic_baseline_perm_identity_24"
         android:gravity="center_horizontal"
-        android:id="@+id/userphonenumber"/>
-</LinearLayout>
+        android:text="@string/studentid"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userderpartmnet" />
+
+    <TextView
+        android:id="@+id/userstudentphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableTop="@drawable/ic_baseline_call_24"
+        android:gravity="center_horizontal"
+        android:text="@string/phonenumber"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userstudentid" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/ic_baseline_arrow_back_24"
+        android:backgroundTint="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/backbutton"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/logout"
+        android:backgroundTint="@android:color/transparent"
+        tools:targetApi="lollipop"
+        android:onClick="Logout_Clicked"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

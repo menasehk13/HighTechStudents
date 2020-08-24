@@ -16,12 +16,11 @@ public class StudentsFile  {
     public StudentsFile(){
 
     }
-    public StudentsFile(String studentname, String studentlastname, String studentsurname,String studentGender,String studentDepartemnt,String studentSection,String studentYear,String studentid,String studentPhone){
+    public StudentsFile(String studentname, String studentlastname, String studentsurname,String studentDepartemnt,String studentSection,String studentYear,String studentid,String studentPhone){
         this.studentname=studentname;
         this.studentlastname=studentlastname;
         this.studentsurname=studentsurname;
         this.studentDepartemnt=studentDepartemnt;
-        this.studentGender=studentGender;
         this.studentSection=studentSection;
         this.StudentYear=studentYear;
         this.studentid=studentid;
@@ -60,10 +59,6 @@ public class StudentsFile  {
         this.studentPhone = studentPhone;
     }
 
-    public void setStudentGender(String studentGender) {
-        this.studentGender = studentGender;
-    }
-
     public String getStudentname() {
         return studentname;
     }
@@ -76,9 +71,6 @@ public class StudentsFile  {
         return studentsurname;
     }
 
-    public String getStudentGender() {
-        return studentGender;
-    }
 
     public String getStudentDepartemnt() {
         return studentDepartemnt;

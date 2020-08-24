@@ -21,6 +21,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.time.Year;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity{
     FirebaseAuth proFirebaseAuth;
     FirebaseFirestore proFirestore;
     String user;
+    String fname,lname,sname,id,yearreg,deprtm,sect,phone;
     String deprt[]={"--Select Department--","Computer Engineering","Computer Science","Accounting","TVTE"};
     String secs[]={"--Select Section--","1","2","3"};
     ArrayAdapter sectionadapter,departementadapter;
@@ -55,19 +58,22 @@ public class RegisterActivity extends AppCompatActivity{
         departementadapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,deprt);
          depSpinner.setAdapter(departementadapter);
          secSpinner.setAdapter(sectionadapter);
-    }
-
-    public void SubmitProfile(View view) {
-        DocumentReference reference=proFirestore.collection("StudentPro").document(user);
-        String fname,lname,sname,id,yearreg,deprt,sect,phone;
         fname=firstName.getText().toString().trim();
         lname=lastName.getText().toString().trim();
         sname=sureName.getText().toString().trim();
         id=studentId.getText().toString().trim();
-        deprt=depSpinner.getSelectedItem().toString().trim();
+        deprtm=depSpinner.getSelectedItem().toString().trim();
         sect=secSpinner.getSelectedItem().toString().trim();
         yearreg=regYear.getText().toString().trim();
         phone=getIntent().getStringExtra("PhoneOfUser");
+        if (depSpinner.getSelectedItem().equals("--Select Department--")&&secSpinner.getSelectedItem().equals("--Select Section--")){
+            Toast.makeText(this, "Please Select a Departement or please Select your Section", Toast.LENGTH_SHORT).show();
+            return;
+        }
+    }
+
+    public void SubmitProfile(View view) {
+        DocumentReference reference=proFirestore.collection(deprtm).document(user);
         if (fname.isEmpty()||lname.isEmpty()||sname.isEmpty()){
             firstName.setError("Fill The Box");
             firstName.setFocusable(true);
@@ -77,10 +83,7 @@ public class RegisterActivity extends AppCompatActivity{
             sureName.setFocusable(true);
             return;
         }
-        if (depSpinner.getSelectedItem().equals("--Select Department--")&&secSpinner.getSelectedItem().equals("--Select Section--")){
-            Toast.makeText(this, "Please Select a Departement or please Select your Section", Toast.LENGTH_SHORT).show();
-            return;
-        }
+
         Map<String,Object> hashmap=new HashMap<>();
         hashmap.put("Firstname",fname);
         hashmap.put("Lastname",lname);
